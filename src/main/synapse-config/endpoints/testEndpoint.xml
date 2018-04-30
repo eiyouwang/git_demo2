@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoint name="testEndpoint" xmlns="http://ws.apache.org/ns/synapse">
+    <http method="post" uri-template="http://localhost:8280/services/testProxy2">
+        <timeout>
+            <duration>60000</duration>
+            <responseAction>fault</responseAction>
+        </timeout>
+        <markForSuspension>
+            <retriesBeforeSuspension>3</retriesBeforeSuspension>
+            <retryDelay>500</retryDelay>
+        </markForSuspension>
+    </http>
+</endpoint>

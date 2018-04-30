@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="testProxy2" startOnLoad="true" transports="http https" xmlns="http://ws.apache.org/ns/synapse">
+    <target>
+        <inSequence>
+            <log level="custom">
+                <property name="testProp" value="go to the test proxy 2"/>
+            </log>
+            <xslt key="xsltEntry2"/>
+            <log level="custom">
+                <property expression="get-property('xsltEntry2')" name="local_entry"/>
+            </log>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </target>
+</proxy>
